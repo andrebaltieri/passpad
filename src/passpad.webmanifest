@@ -1,0 +1,21 @@
+{
+    "name": "Pass(Pad);",
+    "short_name": "Pass(Pad);",
+    "description": "Simple, fast and secure password generator",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#9F86C0",
+    "theme_color": "#9F86C0",
+    "icons": [
+        {
+            "src": "imgs/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "imgs/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

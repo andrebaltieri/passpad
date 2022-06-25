@@ -22,7 +22,7 @@ const getKey = [
 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const length = 20;
-const passwordInput = document.getElementById("password");
+const passwordInput = document.getElementById("password-input");
 const autoCopyCheckbox = document.getElementById("autocopy");
 const storePasswordsCheckbox = document.getElementById("store");
 const saveSettingsCheckbox = document.getElementById("savesettings");
@@ -84,13 +84,13 @@ function copyToClipboard(text) {
 }
 
 function loadSettings() {
-    let autoCopy = localStorage.getItem('settings.autoCopy') || false;
-    let storePasswords = localStorage.getItem('settings.storePasswords') || false;
-    let saveSettings = localStorage.getItem('settings.saveSettings') || true;
+    let autoCopy = localStorage.getItem('settings.autoCopy');
+    let storePasswords = localStorage.getItem('settings.storePasswords');
+    let saveSettings = localStorage.getItem('settings.saveSettings');
 
-    autoCopyCheckbox.checked = autoCopy;
-    storePasswordsCheckbox.checked = storePasswords;
-    saveSettingsCheckbox.checked = saveSettings;
+    autoCopyCheckbox.checked = (autoCopy === 'true');
+    storePasswordsCheckbox.checked = (storePasswords === 'true');
+    saveSettingsCheckbox.checked = (saveSettings === 'true');
 }
 
 function saveSettings() {
@@ -107,3 +107,10 @@ const loaded = () => {
 };
 
 document.addEventListener('DOMContentLoaded', loaded);
+
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', async () => {
+        await navigator.serviceWorker.register('service-worker.js');
+    });
+}
