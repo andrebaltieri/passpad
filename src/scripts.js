@@ -108,9 +108,13 @@ const loaded = () => {
 
 document.addEventListener('DOMContentLoaded', loaded);
 
-
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
-        await navigator.serviceWorker.register('service-worker.js');
+        try {
+            const reg = await navigator.serviceWorker.register('service-worker.js');
+            console.log('Service worker registered! 😎', reg);
+        } catch (err) {
+            console.log('😥 Service worker registration failed: ', err);
+        }
     });
 }
