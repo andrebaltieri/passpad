@@ -1,5 +1,5 @@
 const cacheName = 'cache-v1';
-const precacheResources = ['/', '/passpad/index.html', '/passpad/styles.min.css', '/passpad/scripts.min.js'];
+const precacheResources = ['/passpad', '/passpad/index.html', '/passpad/styles.min.css', '/passpad/scripts.min.js'];
 
 self.addEventListener('install', (event) => {
     event.waitUntil(caches.open(cacheName)
