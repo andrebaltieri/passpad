@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="#main">Main</a></li>
+            <li><a class="nav-item" href="#passwords">Passwords</a></li>
+            <li><a class="nav-item" href="#settings">Settings</a></li>
+        </ul>
+    </nav>
+    <div class="slide bg-primary">
+        <a id="main"></a>
+        <main>
+            <div class="container">
+                <h1>
+                    <span class="text-black">Pass(</span><u>Pad</u><span class="text-black">);</span>
+                </h1>
+                <div class="pass-block">
+                    <input id="password" type="text" value="" />
+                    <button class="generate" onclick="createPassword()">🔃</button>
+                </div>
+                <button class="copy-button" onclick="copyToClipboard()">Copy to clipboard</button>
+            </div>
+        </main>
+    </div>
+    <div class="slide bg-secondary">
+        <a id="passwords"></a>
+        <div class="container">
+            <h2>Session Passwords</h2>
+            <ul id="password-list">
+
+            </ul>
+        </div>
+    </div>
+    <div class="slide bg-tertiary">
+        <a id="settings"></a>
+        <div class="container">
+            <h2>Settings</h2>
+
+            <input type="checkbox" name="Store locally" id="store" onchange="saveSettings()" />
+            <label for="store">
+                <strong>Store passwords</strong>
+            </label>
+            <br>
+            <small>
+                Check this option if you want to store this password for this session. Everything will be deleted as
+                soon you close this tab.
+            </small>
+
+            <br><br>
+
+            <input type="checkbox" name="Auto copy to clipboard" id="autocopy" onchange="saveSettings()" />
+            <label for="store">
+                <strong>Auto copy to clipboard</strong>
+            </label>
+            <br>
+            <small>
+                Check this option if you want to store this password for this session. Everything will be deleted as
+                soon you close this tab.
+            </small>
+
+            <br><br>
+
+            <input type="checkbox" name="Save settings" id="savesettings" onchange="saveSettings()" checked />
+            <label for="store">
+                <strong>Save settings</strong>
+            </label>
+            <br>
+            <small>
+                Save current settings locally on this device
+            </small>
+        </div>
+    </div>
+
+    <div id="snackbar">Copied to clipboard...</div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
