@@ -1,5 +1,5 @@
 const cacheName = 'cache-v1';
-const precacheResources = ['/docs', '/docs/index.html', '/docs/styles.min.css', '/docs/scripts.min.js'];
+const precacheResources = ['/', '/index.html', '/styles.min.css', '/scripts.min.js'];
 
 self.addEventListener('install', (event) => {
     event.waitUntil(caches.open(cacheName)
